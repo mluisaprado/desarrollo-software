@@ -1,0 +1,22 @@
+{
+  "name": "desarrollo-software",
+  "version": "1.0.0",
+  "description": "Proyecto desarrollo de software",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run --prefix functions build -- --watch\" \"firebase emulators:start\"",
+    "deploy:hosting": "firebase deploy --only hosting",
+    "deploy:functions": "firebase deploy --only functions",
+    "build": "npm run build --prefix backend && npm run build --prefix frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^12.1.0",
+    "firebase-admin": "^13.4.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
